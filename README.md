@@ -88,28 +88,3 @@ portfolio/
   ```
 - Dropdown menus can be added for more categories.
 
-## Common Issues & Troubleshooting
-
-- **Page not found (404)**: Check that the route exists in `app.py` and the template file name matches (case sensitive).
-- **Image not showing**: Ensure the image is in `static/images/` and the file name matches exactly (including case).
-- **Navigation not working**: Make sure all links use `url_for` and not hardcoded file names.
-- **Port already in use**: If you see `Address already in use`, free the port or use another port in `app.py`:
-  ```python
-  if __name__ == '__main__':
-      app.run(debug=True, port=5050)
-  ```
-
-## Customization
-
-- Replace the placeholder images in `static/images/` with your own work
-- Update the content in the HTML templates
-- Modify the CSS in `static/css/main.css` to match your style
-- Update the contact information and social media links in `About.html`
-
-## Contributing
-
-Feel free to fork this project and customize it for your needs.
-
-## License
-
-This project is open source and available under the MIT License. 
