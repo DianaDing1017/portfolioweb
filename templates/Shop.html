@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Diana Ding</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+
+*{
+box-sizing:border-box;
+}
+body {margin: 0; font-family: Lucida Console,cursive;background:#111;background-image: url("http://b.parsons.edu/%7Edingy649/parsons/portfolio/img/eye.gif");
+	background-repeat: repeat;
+	height: 300px;}
+h2 {color:white;padding:5px;text-align:center;margin:50px;}
+/*style the header*/
+.header{
+color:pink;
+padding:20px;
+text-align:center;
+}
+/*style the menu bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  color:pink;
+  text-decoration:none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*style the image gallery*/
+
+div.gallery:hover {
+  border: 1px solid #777;
+  background:grey;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.caption {
+  padding: 15px;
+  text-align: center;
+  color:white
+}
+.responsive {
+  padding: 60px 60px;
+  float: left;
+  width: 30.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 50%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+ </style>
+</head>
+
+<body>
+<div class="header">
+  <h1>Diana Ding</h1>
+  <p>Illustration can make any impossible things become possible.</p>
+</div>
+
+<ul>
+  <li><a href="{{ url_for('home') }}">Home</a></li>
+  <li><a href="{{ url_for('about') }}">About</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Works</a>
+    <div class="dropdown-content">
+      <a href="{{ url_for('illustration') }}">All Works</a>
+      <a href="#">Drawings</a>
+      <a href="#">Installation</a>
+    </div>
+  </li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="{{ url_for('shop') }}">Shop</a></li>
+</ul>
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard1.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard1.jpg') }}" alt="Blue No.1" >
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard2.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard2.jpg') }}" alt="Blue No.2">
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard3.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard3.jpg') }}" alt="Blue No.3">
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard4.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard4.jpg') }}" alt="Love No.1" >
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard5.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard5.jpg') }}" alt="Love No.2">
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a href="{{ url_for('static', filename='images/postcard6.jpg') }}">
+      <img src="{{ url_for('static', filename='images/postcard6.jpg') }}" alt="Love No.3">
+    </a>
+    <div class="caption">Postcard<br>Size: 4*6inches<br>Price: $2.00</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,115 @@
+# Portfolio Website
+
+A clean and modern portfolio website built with Flask to showcase illustration works.
+
+## Features
+
+- Responsive design
+- Image gallery with modal view
+- About page with contact information
+- Shop page for displaying products
+- Clean and artistic layout
+- Sidebar navigation with correct Flask routing
+
+## Setup
+
+1. Create a virtual environment:
+```bash
+python -m venv venv
+```
+
+2. Activate the virtual environment:
+- On Windows:
+```bash
+venv\Scripts\activate
+```
+- On macOS/Linux:
+```bash
+source venv/bin/activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the application:
+```bash
+python app.py
+```
+
+5. Open your browser and visit:
+```
+http://localhost:5000
+```
+
+## Project Structure
+
+```
+portfolio/
+├── app.py
+├── static/
+│   ├── css/
+│   │   └── main.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/
+│       └── (your images)
+├── templates/
+│   ├── index.html
+│   ├── About.html
+│   ├── illustration.html
+│   ├── Shop.html
+│   └── (other pages)
+└── README.md
+```
+
+## How to Add New Pages or Images
+
+- **Add a new page**: Create a new HTML file in the `templates/` directory, and add a corresponding route in `app.py`:
+  ```python
+  @app.route('/newpage')
+  def newpage():
+      return render_template('newpage.html')
+  ```
+- **Add images**: Place your images in `static/images/` and reference them in HTML using:
+  ```html
+  <img src="{{ url_for('static', filename='images/yourimage.jpg') }}" alt="Description">
+  ```
+
+## Navigation Bar (Sidebar)
+
+- All navigation links use Flask's `url_for` for correct routing:
+  ```html
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('about') }}">About</a>
+  <a href="{{ url_for('illustration') }}">Works</a>
+  <a href="{{ url_for('shop') }}">Shop</a>
+  ```
+- Dropdown menus can be added for more categories.
+
+## Common Issues & Troubleshooting
+
+- **Page not found (404)**: Check that the route exists in `app.py` and the template file name matches (case sensitive).
+- **Image not showing**: Ensure the image is in `static/images/` and the file name matches exactly (including case).
+- **Navigation not working**: Make sure all links use `url_for` and not hardcoded file names.
+- **Port already in use**: If you see `Address already in use`, free the port or use another port in `app.py`:
+  ```python
+  if __name__ == '__main__':
+      app.run(debug=True, port=5050)
+  ```
+
+## Customization
+
+- Replace the placeholder images in `static/images/` with your own work
+- Update the content in the HTML templates
+- Modify the CSS in `static/css/main.css` to match your style
+- Update the contact information and social media links in `About.html`
+
+## Contributing
+
+Feel free to fork this project and customize it for your needs.
+
+## License
+
+This project is open source and available under the MIT License. 
